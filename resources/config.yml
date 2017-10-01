@@ -5,9 +5,6 @@
 #Default: 50
 MOTD Delay: 50
 
-#Here you can set if you want the shuffle on, or off.
-MOTD Shuffle: on
-
 #The MOTD Messages.
 #You can add to as much as you like! 
 #Just make sure you copy it correctly. 
