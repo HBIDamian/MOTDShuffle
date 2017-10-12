@@ -2,8 +2,13 @@
 #The Ammount of time that you wish for the MOTD Delay.
 #This doesn't make the client's query change,
 #this effects the ammount of time the server sends the message.
-#Default: 50
-MOTD Delay: 50
+#Default: 100
+MOTD Delay: 100
+
+#Here you can set if you want the shuffle on, or off.
+#It is required to use quotations. :D
+#Default: "off"
+MOTD Shuffle: "off"
 
 #The MOTD Messages.
 #You can add to as much as you like! 

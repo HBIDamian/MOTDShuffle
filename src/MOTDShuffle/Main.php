@@ -17,7 +17,7 @@ class Main extends PluginBase implements Listener {
             $this->getServer()->getScheduler()->scheduleRepeatingTask(new SendMOTD($this), $this->getMainConfig()->get("MOTD Delay"));
         } else {
             $this->getLogger()->info("§4The value you entered in §c'MOTD Delay' §4is not an integer. Please fix it.");
-        }
+        } 
     }
 
     public function getMainConfig(){
