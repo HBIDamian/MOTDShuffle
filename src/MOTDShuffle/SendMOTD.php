@@ -1,17 +1,16 @@
 <?php
 namespace MOTDShuffle;
-use pocketmine\scheduler\PluginTask;
-use pocketmine\Server;
+use pocketmine\scheduler\Task;
 
-class SendMOTD extends PluginTask{
+class SendMOTD extends Task {
+
     private $plugin;
-    
+
     public function __construct(Main $plugin){
-        parent::__construct($plugin);
         $this->plugin = $plugin;
         $this->line = -1;
     }
-    
+
     public function onRun($tick){
         if ($this->getPlugin()->getMainConfig()->get("MOTD Shuffle") == "on"){
             //Shuffle is on
@@ -30,7 +29,7 @@ class SendMOTD extends PluginTask{
         } else {
             //Error if user didn't specify "On or Off"
             $this->getPlugin()->getLogger()->error("A error has occured! Make sure the setting is right in the §cconfig.yml§4.");
-            $this->getPlugin()->getServer()->getScheduler()->cancelTask($this->getTaskId()); //Cancelled to prevent console spam ;)
+            $this->getPlugin()->getScheduler()->cancelTask($this->getTaskId()); //Cancelled to prevent console spam ;)
         }
     }
     
