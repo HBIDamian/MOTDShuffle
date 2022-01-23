@@ -1,5 +1,5 @@
 <?php
-namespace MOTDShuffle;
+namespace HBIDamian\MOTDShuffle;
 
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
