@@ -1,27 +1,40 @@
 ---
-#The Ammount of time that you wish for the MOTD Delay.
-#This doesn't make the client's query change,
-#this effects the ammount of time the server sends the message.
-#Default: 100
+# The Ammount of time in ticks that you wish for the MOTD Delay.
+# This doesn't make the client's query change,
+# This effects the ammount of time the server sends the message.
+# -----------------------
+# One second is 20 ticks.
+# Default: 100
 MOTD Delay: 100
 
-#Here you can set if you want the shuffle on, or off.
-#It is required to use quotations. :D
-#Default: "off"
-MOTD Shuffle: "off"
+# Here you can set if you want the shuffle "on", or "off".
+# It is required to use quotations.
+# Default: "on"
+MOTD Shuffle: "on"
 
-#The MOTD Messages.
-#You can add to as much as you like! 
-#Just make sure you copy it correctly. 
+# The MOTD Messages.
+# You can add to as much as you like! 
+# Just make sure you copy it correctly.
+# VARIABLES:
+# Use these within the MOTD Messages below. 
+# {POCKETMINE_API}   - Displays the PocketMine version.
+# {SERVER_VERSION}   - Displays the Minecraft version for the server.
+# {ONLINE_PLAYERS}   - Displays the current amount of online players.
+# {MAX_PLAYERS}      - Displays the current Max players stated in server.properties.
+# {PREFIX}           - Displays the set prefix below.
+# {SUFFIX}           - Displays the set suffix below.
+Prefix: "Example #1"
+Suffix: "Example #2"
+
 MOTD Message:
-    - "Message 1"
-    - "Message 2"
-    - "Message 3"
-    - "Message 4"
-    - "Message 5"
-    - "Message 6"
-    - "Message 7"
-    - "Message 8"
-    - "Message 9"
-    - "Message 10"
+    - "&aMessage 1&r"
+    - "&bMessage 2&r"
+    - "&cMessage 3&r"
+    - "&dMessage 4&r"
+    - "&eMessage 5&r"
+
+# Config Version:
+# Do not touch the config version. 
+# It's only to allow changes without issue  
+Config Version: 1.0.0
 ...
