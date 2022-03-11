@@ -1,7 +1,7 @@
 ---
 # The Ammount of time in ticks that you wish for the MOTD Delay.
 # This doesn't make the client's query change,
-# This effects the ammount of time the server sends the message.
+# This affects the amount of time the server sends the message.
 # -----------------------
 # One second is 20 ticks.
 # Default: 100
