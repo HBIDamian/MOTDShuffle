@@ -6,7 +6,7 @@ use pocketmine\utils\TextFormat;
 class SendMOTD extends Task {
 
     private Main $plugin;
-	private int $line;
+    private int $line;
 
     public function __construct(Main $plugin){
         $this->plugin = $plugin;
