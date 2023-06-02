@@ -13,12 +13,12 @@ class SendMOTD extends Task {
         $this->line = -1;
     }
 
-	public function replaceVars(string $str, array $vars): string{
-		foreach ($vars as $key => $value){
-			$str = str_replace('{' . $key . '}', (string) $value, $str);
-		}
-		return $str;
+    public function replaceVars(string $str, array $vars): string{
+	foreach ($vars as $key => $value){
+	    $str = str_replace('{' . $key . '}', (string) $value, $str);
 	}
+	return $str;
+    }
 
     public function onRun(): void{
         $getMOTD = $this->getPlugin()->getMainConfig()->get("MOTD Message");
@@ -47,11 +47,11 @@ class SendMOTD extends Task {
         } else {
             //Error if user didn't specify "On or Off"
             $this->getPlugin()->getLogger()->error("A error has occured! Make sure the setting is right in the §cconfig.yml§4.");
-			$this->getHandler()->cancel(); //Cancelled to prevent console spam ;)
+	    $this->getHandler()->cancel(); //Cancelled to prevent console spam ;)
         }
     }
     
     public function getPlugin() : Main{
-	   return $this->plugin;
+	return $this->plugin;
     }
 }
