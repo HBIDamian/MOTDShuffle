@@ -5,19 +5,20 @@ use pocketmine\utils\TextFormat;
 
 class SendMOTD extends Task {
 
-    private $plugin;
+    private Main $plugin;
+    private int $line;
 
     public function __construct(Main $plugin){
         $this->plugin = $plugin;
         $this->line = -1;
     }
 
-	public function replaceVars(string $str, array $vars): string{
-		foreach ($vars as $key => $value){
-			$str = str_replace('{' . $key . '}', (string) $value, $str);
-		}
-		return $str;
+    public function replaceVars(string $str, array $vars): string{
+	foreach ($vars as $key => $value){
+	    $str = str_replace('{' . $key . '}', (string) $value, $str);
 	}
+	return $str;
+    }
 
     public function onRun(): void{
         $getMOTD = $this->getPlugin()->getMainConfig()->get("MOTD Message");
@@ -46,11 +47,11 @@ class SendMOTD extends Task {
         } else {
             //Error if user didn't specify "On or Off"
             $this->getPlugin()->getLogger()->error("A error has occured! Make sure the setting is right in the §cconfig.yml§4.");
-            $this->getPlugin()->getScheduler()->cancelTask($this->getTaskId()); //Cancelled to prevent console spam ;)
+	    $this->getHandler()->cancel(); //Cancelled to prevent console spam ;)
         }
     }
     
-    public function getPlugin(){
-	   return $this->plugin;
+    public function getPlugin() : Main{
+	return $this->plugin;
     }
 }
