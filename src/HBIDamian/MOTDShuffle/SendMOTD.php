@@ -5,7 +5,8 @@ use pocketmine\utils\TextFormat;
 
 class SendMOTD extends Task {
 
-    private $plugin;
+    private Main $plugin;
+	private int $line;
 
     public function __construct(Main $plugin){
         $this->plugin = $plugin;
@@ -46,11 +47,11 @@ class SendMOTD extends Task {
         } else {
             //Error if user didn't specify "On or Off"
             $this->getPlugin()->getLogger()->error("A error has occured! Make sure the setting is right in the §cconfig.yml§4.");
-            $this->getPlugin()->getScheduler()->cancelTask($this->getTaskId()); //Cancelled to prevent console spam ;)
+			$this->getHandler()->cancel(); //Cancelled to prevent console spam ;)
         }
     }
     
-    public function getPlugin(){
+    public function getPlugin() : Main{
 	   return $this->plugin;
     }
 }
