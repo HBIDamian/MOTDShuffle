@@ -1,7 +1,7 @@
 name: MOTDShuffle
 main: HBIDamian\MOTDShuffle\Main
 load: STARTUP
-version: 1.4.0
+version: 1.5.0
 api: 5.0.0
 author: HBIDamian
 description: MOTD Upon MCPE Client Call.
